@@ -1,4 +1,8 @@
-## How to start:
+### Basic shopping cart api
+
+for data storage used mongo, integration tests included
+
+### How to start:
 
 install dependencies:
  
@@ -10,6 +14,7 @@ run the app:
  
  `DEBUG=shopping-list:* npm start`
 
-run tests:
+or run tests:
 
 `npm run test`
+
