@@ -4,23 +4,13 @@ for data storage used mongo, integration tests included
 
 ### How to start:
 
-To setup database
+To run server api:
 
 `docker-compose up`
 
-install dependencies:
+To run tests:
  
- `npm install`
-
-rename `sample.env` into `.env`, optionally set another mongo connection
-
-run the app:
- 
- `DEBUG=shopping-list:* npm start`
-
-or run tests:
-
-`npm run test`
+`docker-compose -f docker-compose.test.yml up --abort-on-container-exit`
 
 ### some hints
 
