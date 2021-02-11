@@ -4,6 +4,8 @@ for data storage used mongo, integration tests included
 
 ### How to start:
 
+Install docker https://www.docker.com/
+
 To run server api:
 
 `docker-compose up`
