@@ -4,6 +4,10 @@ for data storage used mongo, integration tests included
 
 ### How to start:
 
+To setup database
+
+`docker-compose up`
+
 install dependencies:
  
  `npm install`

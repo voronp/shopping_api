@@ -7,7 +7,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 
 if(process.env.NODE_ENV !== 'test') {
-    mongoose.connect(process.env.MONGO_URI,
+    const {DB_USER, DB_PASSWORD, DB_NAME} = process.env;
+    mongoose.connect(`mongodb://${DB_USER}:${DB_PASSWORD}@localhost:27017/${DB_NAME}?authSource=admin`,
         {
             useUnifiedTopology: true,
             useNewUrlParser: true
