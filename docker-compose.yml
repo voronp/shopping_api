@@ -16,3 +16,17 @@ services:
       - 27017:27017
     volumes:
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+  web:
+    build:
+      context: ./
+      target: serv
+    links:
+      - mongodb
+    volumes:
+      - .:/src
+    command: npm run start
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      DEBUG: shopping-list:*

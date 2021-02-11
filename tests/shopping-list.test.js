@@ -5,7 +5,7 @@ const {ShoppingList} = require('../models/ShoppingList')
 
 beforeAll((done) => {
     const {DB_USER, DB_PASSWORD, DB_NAME} = process.env;
-    mongoose.connect(`mongodb://${DB_USER}:${DB_PASSWORD}@localhost:27017/${DB_NAME}?authSource=admin`,
+    mongoose.connect(`mongodb://${DB_USER}:${DB_PASSWORD}@mongodb:27017/${DB_NAME}?authSource=admin`,
         { useNewUrlParser: true, useUnifiedTopology: true },
         () => done());
 });
