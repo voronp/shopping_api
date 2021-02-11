@@ -59,6 +59,31 @@ test("POST /shopping-list/create", async () => {
         })
 })
 
+test("GET /shopping-list/get/32", async () => {
+    await supertest(app)
+        .get("/shopping-list/get/32")
+        .expect(500)
+        .then((response) => {
+            // Check the response type and length
+            expect(Array.isArray(response.body.errors)).toBeTruthy();
+            expect(response.body.errors.length).toEqual(1);
+            expect(response.body.errors[0].value).toEqual('32');
+        })
+})
+
+test("GET /shopping-list/get/", async () => {
+
+    await supertest(app)
+        .get("/shopping-list/get/"+listId)
+        .expect(200)
+        .then((response) => {
+            // Check the response type and length
+            expect(response.body).toBeTruthy();
+            expect(response.body.name).toEqual('List 1');
+
+        })
+})
+
 test("PUT /shopping-list/update/", async () => {
     const data = {
         name: "List 2",
